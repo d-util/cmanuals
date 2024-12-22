@@ -1,0 +1,81 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>printf - cmanuals</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1 id="!">
+            printf - Prints out to stdin<br>fprintf - Prints out to a FILE *<br>sprintf - Prints out to a const char *
+        </h1>
+        <a href="../../">&lt;&lt; BACK</a>
+        <p>
+            <h1 id="synopsis">SYNOPSIS</h1>
+            <h2>Prototype - Simple</h2>
+            <code class="code code-prototype code-inline">int printf(char *format, args*);</code><br>
+            Note that <code class="code code-inline">args*</code> means zero or more arguments. <wbr>(not to do with ISO C99)<br>
+            Think of <code>char *</code> as a <code>string</code>.<br>
+            <h2>Prototype - Experienced</h2>
+            <code class="code code-snippet">
+                int printf(const char *<wbr>restrict format, <wbr>...);<br>
+                int fprintf(FILE *<wbr>restrict format, <wbr>...);<br>
+                int sprintf(char *<wbr>restrict src, <wbr>const char *<wbr>restrict format, ...);<br>
+                ...<br>
+            </code><br>
+            Note that <code class="code code-inline">...</code> means zero or more arguments. <wbr>(not to do with ISO C99)<br>
+            <h1 id="examples">EXAMPLES</h1>
+            <h2>printf</h2>
+            <code class="code code-snippet">
+                #include &lt;stdio.h&gt;<br>
+                <br>
+                typedef const char* string;<br>
+                int main(void)<br>
+                {<br>
+                    string s = "cmanuals is cool!";<br>
+                    printf("%s", s); // Prints out "cmanuals is cool" to the screen <br>
+                    <br>
+                    int i = 10;<br>
+                    printf("cmanuals is really %i/%i!", i); // Prints out "cmanuals is really 10/10!" to the screen <br>
+                    <br>
+                    double d = 3.14159265358979;<br>
+                    printf("pi is %.14lf.", d); // Prints out "pi is 3.14159265358979" to the screen <br>
+                }<br>
+            </code>
+            <h2>fprintf</h2>
+            <code class="code code-snippet">
+                <pre>
+                    #include &lt;stdio.h&gt;
+
+                    int main(void)
+                    {
+                        FILE *file = fopen("hellofile.txt", "w");
+                        if (file == NULL)
+                        {
+                            return 1;
+                        }
+
+                        char *s = "Hello, file";
+                        fprintf(file, "%s\n", s);
+                    }
+                </pre>
+            </code>
+            <h2>sprintf</h2>
+            <code class="code code-snippet">
+                <pre>
+                    #include &lt;stdio.h&gt;
+
+                    int main(void)
+                    {
+                        char buf[32];
+
+                        double pi = 3.14159265358979;
+                        sprintf(buf, "%lf", pi);
+                    }
+                </pre>
+            </code>
+        </p>
+    </body>
+</html>
