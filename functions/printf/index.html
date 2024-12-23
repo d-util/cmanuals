@@ -26,6 +26,9 @@ layout: default
                 int printf(const char *<wbr>restrict format, <wbr>...);<br>
                 int fprintf(FILE *<wbr>restrict format, <wbr>...);<br>
                 int sprintf(char *<wbr>restrict src, <wbr>const char *<wbr>restrict format, ...);<br>
+                int dprintf(int <wbr>fd, <wbr>const char *<wbr>restrict format, ...);<br>
+                int snprintf(char <wbr>str[restrict .size], <wbr>size_t size, <wbr>const char *<wbr>restrict format, ...);<br>
+                int vprintf(const char *restrict format, va_list ap);<br>
                 ...<br>
             </code><br>
             Note that <code class="code code-inline">...</code> means zero or more arguments. <wbr>(not to do with ISO C99)<br>
