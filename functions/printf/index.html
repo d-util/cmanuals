@@ -29,20 +29,22 @@ layout: default
             <h1 id="examples">EXAMPLES</h1>
             <h2>printf</h2>
             <code class="code code-snippet">
-                #include &lt;stdio.h&gt;<br>
-                <br>
-                typedef const char* string;<br>
-                int main(void)<br>
-                {<br>
-                    string s = "cmanuals is cool!";<br>
-                    printf("%s", s); // Prints out "cmanuals is cool" to the screen <br>
+                <pre>
+                    #include &lt;stdio.h&gt;<br>
                     <br>
-                    int i = 10;<br>
-                    printf("cmanuals is really %i/%i!", i); // Prints out "cmanuals is really 10/10!" to the screen <br>
-                    <br>
-                    double d = 3.14159265358979;<br>
-                    printf("pi is %.14lf.", d); // Prints out "pi is 3.14159265358979" to the screen <br>
-                }<br>
+                    typedef const char* string;<br>
+                    int main(void)<br>
+                    {<br>
+                        string s = "cmanuals is cool!";<br>
+                        printf("%s", s); // Prints out "cmanuals is cool" to the screen <br>
+                        <br>
+                        int i = 10;<br>
+                        printf("cmanuals is really %i/%i!", i); // Prints out "cmanuals is really 10/10!" to the screen <br>
+                        <br>
+                        double d = 3.14159265358979;<br>
+                        printf("pi is %.14lf.", d); // Prints out "pi is 3.14159265358979" to the screen <br>
+                    }<br>
+                </pre>
             </code>
             <h2>fprintf</h2>
             <code class="code code-snippet">
